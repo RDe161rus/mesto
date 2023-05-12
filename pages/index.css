@@ -6,7 +6,7 @@
 @import url("../blocks/header/header.css");
 @import url("../blocks/header/__logo/header__logo.css");
 @import url("../blocks/header/__line/header__line.css");
-/* БЛОК PROFILE */
+/* СЕКЦИЯ PROFILE */
 @import url("../blocks/profile/profile.css");
 @import url("../blocks/profile/__avatar/profile__avatar.css");
 @import url("../blocks/profile/__edit-button/profile__edit-button.css");
@@ -22,3 +22,6 @@
 @import url("../blocks/elements/__mask-group/element__mask-group.css");
 @import url("../blocks/elements/__rectangle/elements__rectangle.css");
 @import url("../blocks/elements/__title/element__title.css");
+/* БЛОК FOOTER */
+@import url("../blocks/footer/footer.css");
+@import url("../blocks/footer/__title/footer__title.css");

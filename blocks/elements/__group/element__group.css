@@ -1,0 +1,13 @@
+.element__group {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  width: 20px;
+  height: 19px;
+  padding: 0;
+  background: url("../../../images/Vector_like.svg") center / contain no-repeat;
+  border: none;
+}
+.element__group:hover {
+  opacity: .5;
+}

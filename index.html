@@ -20,7 +20,7 @@
             <img class="profile__avatar" src="./images/Jacques-Yves_Cousteau.jpg" alt="Жак-Ив Кусто">
             <div class="profile__profile-info">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button"></button>
+              <button id="opened-popup-btn" class="profile__edit-button"></button>
               <p class="profile__text">Исследователь океана</p>
             </div>
         </div>
@@ -73,10 +73,10 @@
     <footer class="footer">
       <h2 class="footer__title">&copy; 2020. Денис Растрепин</h2>
     </footer>
-    <div class="popup">
+    <div id="edit-popup" class="popup">
       <div class="popup__container">
-        <button class="popup__close-btn"></button>
-        <form class="popup__form">
+        <button id="close-popup-btn" class="popup__close-btn"></button>
+        <form id="edit-form" class="popup__form">
           <h2 class="form__title">Редактировать профиль</h2>
           <div class="form__field">
             <input id="name-input" type="text" class="input input__name-input" />

@@ -1,0 +1,10 @@
+.element__group_active {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  width: 20px;
+  height: 19px;
+  padding: 0;
+  border: none;
+  background: url("../../../images/vector_black.svg") center / contain no-repeat;
+}

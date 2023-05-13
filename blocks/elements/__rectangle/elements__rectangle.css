@@ -1,0 +1,7 @@
+.elements__rectangle {
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}

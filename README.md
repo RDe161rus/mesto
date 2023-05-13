@@ -22,7 +22,7 @@
 
 **Figma**
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?type=design&node-id=0-1&t=shv3aJ98Hoh5jhHJ-0)
+* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?type=design&node-id=0-1&t=9laIELT5IdrHEMCq-0)
 
 **Ссылка на сайт**
 * [Ссылка на сайт](https://rde161rus.github.io/mesto/)

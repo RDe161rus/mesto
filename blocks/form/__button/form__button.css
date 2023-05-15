@@ -1,7 +1,8 @@
 .form__button {
+  padding: 0;
   background-color: #000;
   width: 358px;
-  height: 50px;
+  min-height: 50px;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;

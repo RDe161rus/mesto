@@ -35,5 +35,3 @@
 @import url("../blocks/form/__button/form__button.css");
 /* БЛОК INPUT */
 @import url("../blocks/input/input.css");
-@import url("../blocks/input/__name-input/input__name-input.css");
-@import url("../blocks/input/__text-input/input__text-input.css");

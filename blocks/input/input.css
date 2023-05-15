@@ -11,4 +11,9 @@
   color: #000;
   padding-bottom: 13px;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
+  margin-bottom: 30px;
+}
+
+.input:last-child {
+  margin-bottom: 0;
 }

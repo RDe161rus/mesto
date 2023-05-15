@@ -6,87 +6,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
   <title>Места России</title>
-  <script src="./script/script.js" defer></script>
+  <script src="./scripts/script.js" defer></script>
 </head>
 <body class="root">
   <div class="page">
     <header class="header">
       <img class="header__logo" src="./images/logo/logo-header.svg" alt="Логотип_Место">
-      <div class="header__line"></div>
     </header>
     <main class="main">
       <section class="profile">
         <div class="profile__profile-group">
-            <img class="profile__avatar" src="./images/Jacques-Yves_Cousteau.jpg" alt="Жак-Ив Кусто">
-            <div class="profile__profile-info">
-              <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button id="opened-popup-btn" class="profile__edit-button"></button>
-              <p class="profile__text">Исследователь океана</p>
-            </div>
+          <img class="profile__avatar" src="./images/Jacques-Yves_Cousteau.jpg" alt="Жак-Ив Кусто">
+          <div class="profile__profile-info">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <button id="opened-popup-btn" class="profile__edit-button" type="button"></button>
+            <p class="profile__text">Исследователь океана</p>
+          </div>
         </div>
-        <button class="profile__add-button"></button>
+        <button class="profile__add-button" type="button"></button>
       </section>
       <section class="elements">
         <article class="element">
-          <div class="elements__rectangle">
-            <img class="element__mask-group" src="./images/dombay.jpg" alt="Домбай">
-            <h2 class="element__title">Домбай</h2>
-            <button class="element__group"></button>
-          </div>
+          <img class="element__img" src="./images/dombay.jpg" alt="Домбай">
+          <h2 class="element__title">Домбай</h2>
+          <button class="element__button" type="button"></button>
         </article>
         <article class="element">
-          <div class="elements__rectangle">
-            <img class="element__mask-group" src="./images/kamchatka.jpg" alt="Камчатка">
-            <h2 class="element__title">Камчатка</h2>
-            <button class="element__group"></button>
-          </div>
+          <img class="element__img" src="./images/kamchatka.jpg" alt="Камчатка">
+          <h2 class="element__title">Камчатка</h2>
+          <button class="element__button" type="button"></button>
         </article>
         <article class="element">
-          <div class="elements__rectangle">
-            <img class="element__mask-group" src="./images/komi.jpg" alt="Коми">
-            <h2 class="element__title">Коми</h2>
-            <button class="element__group"></button>
-          </div>
+          <img class="element__img" src="./images/komi.jpg" alt="Коми">
+          <h2 class="element__title">Коми</h2>
+          <button class="element__button" type="button"></button>
         </article>
         <article class="element">
-          <div class="elements__rectangle">
-            <img class="element__mask-group" src="./images/karachay-cherkessia.jpg" alt="Карачаево-Черкесия">
-            <h2 class="element__title">Карачаево-Черкесия</h2>
-            <button class="element__group"></button>
-          </div>
+          <img class="element__img" src="./images/karachay-cherkessia.jpg" alt="Карачаево-Черкесия">
+          <h2 class="element__title">Карачаево-Черкесия</h2>
+          <button class="element__button" type="button"></button>
         </article>
-        <article class="element">
-          <div class="elements__rectangle">
-          <img class="element__mask-group" src="./images/baikal.jpg" alt="Байкал">
+        <article class="element"> 
+          <img class="element__img" src="./images/baikal.jpg" alt="Байкал">
           <h2 class="element__title">Байкал</h2>
-          <button class="element__group"></button>
-          </div>
+          <button class="element__button" type="button"></button> 
         </article>
         <article class="element">
-          <div class="elements__rectangle"><img class="element__mask-group" src="./images/mount_elbrus.jpg" alt="Гора Эльбрус">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__group"></button>
-          </div>
+          <img class="element__img" src="./images/mount_elbrus.jpg" alt="Гора Эльбрус">
+          <h2 class="element__title">Гора Эльбрус</h2>
+          <button class="element__button" type="button"></button>
         </article>
       </section>
     </main>
     <footer class="footer">
-      <h2 class="footer__title">&copy; 2020. Денис Растрепин</h2>
+      <p class="footer__title">&copy; 2020. Денис Растрепин</p>
     </footer>
     <div id="edit-popup" class="popup">
       <div class="popup__container">
         <button id="close-popup-btn" class="popup__close-btn"></button>
-        <form id="edit-form" class="popup__form">
-          <h2 class="form__title">Редактировать профиль</h2>
-          <div class="form__field">
-            <input id="name-input" type="text" class="input" />
-          <div class="form__line"></div>
-          </div>
-          <div class="form__field">
-            <input id="text-input" type="text" class="input" />
-          <div class="form__line"></div>
-          </div>
-          <button type="submit" class="form__button">Сохранить</button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form id="edit-form" class="form" name="form">
+          <input id="name-input" type="text" class="input input__name-input" name="name-content" />
+          <input id="text-input" type="text" class="input input__text-input" name="text-content"/>
+          <button type="submit" class="form__button" type="button" >Сохранить</button>
         </form>
       </div>
     </div>

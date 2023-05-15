@@ -1,4 +1,4 @@
-.element__group {
+.element__button {
   position: absolute;
   bottom: 30px;
   right: 20px;
@@ -8,6 +8,6 @@
   background: url("../../../images/Vector_like.svg") center / contain no-repeat;
   border: none;
 }
-.element__group:hover {
+.element__button:hover {
   opacity: .5;
 }

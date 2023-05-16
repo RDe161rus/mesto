@@ -33,5 +33,6 @@
 /* БЛОК FORM */
 @import url("../blocks/form/form.css");
 @import url("../blocks/form/__button/form__button.css");
+@import url("../blocks/form/__fieldset/fieldset.css");
 /* БЛОК INPUT */
 @import url("../blocks/input/input.css");

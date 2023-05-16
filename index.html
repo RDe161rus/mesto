@@ -63,11 +63,13 @@
     </footer>
     <div id="edit-popup" class="popup">
       <div class="popup__container">
-        <button id="close-popup-btn" class="popup__close-btn"></button>
-        <h2 class="popup__title">Редактировать профиль</h2>
+        <button id="close-popup-btn" class="popup__close-btn" type="button"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
         <form id="edit-form" class="form" name="form">
-          <input id="name-input" type="text" class="input" name="name-content" />
-          <input id="text-input" type="text" class="input" name="text-content"/>
+          <fieldset class="form__fieldset">
+            <input id="name-input" type="text" class="input" name="name-content"/>
+            <input id="text-input" type="text" class="input" name="text-content"/>
+          </fieldset>
           <button class="form__button" type="submit">Сохранить</button>
         </form>
       </div>

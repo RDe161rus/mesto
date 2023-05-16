@@ -21,7 +21,7 @@
   .form__button {
     margin-top: 45px;
     width: 238px;
-    height: 46px;
+    min-height: 46px;
     font-size: 14px;
     line-height: 17px;
   }

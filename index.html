@@ -1,79 +1,132 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
-  <title>Места России</title>
-  <script src="./scripts/script.js" defer></script>
-</head>
-<body class="root">
-  <div class="page">
-    <header class="header">
-      <img class="header__logo" src="./images/logo/logo-header.svg" alt="Логотип_Место">
-    </header>
-    <main class="main">
-      <section class="profile">
-        <div class="profile__profile-group">
-          <img class="profile__avatar" src="./images/Jacques-Yves_Cousteau.jpg" alt="Жак-Ив Кусто">
-          <div class="profile__profile-info">
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button id="opened-popup-btn" class="profile__edit-button" type="button"></button>
-            <p class="profile__text">Исследователь океана</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Места России</title>
+    <script src="./scripts/constants.js" defer></script>
+    <script src="./scripts/script.js" defer></script>
+  </head>
+  <body class="root">
+    <div class="page">
+      <header class="header">
+        <img
+          class="header__logo"
+          src="./images/logo/logo-header.svg"
+          alt="Логотип_Место"
+        />
+      </header>
+      <main class="main">
+        <section class="profile">
+          <div class="profile__profile-group">
+            <img
+              class="profile__avatar"
+              src="./images/Jacques-Yves_Cousteau.jpg"
+              alt="Жак-Ив Кусто"
+            />
+            <div class="profile__profile-info">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button
+                id="opened-popup-btn"
+                class="profile__edit-button"
+                type="button"
+              ></button>
+              <p class="profile__text">Исследователь океана</p>
+            </div>
           </div>
+          <button
+            id="opened-add-button"
+            class="profile__add-button"
+            type="button"
+          ></button>
+        </section>
+        <section class="elements">
+          <template id="template-element">
+            <article class="element">
+              <img class="element__img" src="#" alt="картинка" />
+              <h2 class="element__title"></h2>
+              <button class="element__button" type="button"></button>
+              <button class="element__button-del" type="button"></button>
+            </article>
+          </template>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__title">&copy; 2020. Денис Растрепин</p>
+      </footer>
+      <div id="edit-popup" class="popup">
+        <div class="popup__container">
+          <button
+            id="close-popup-btn"
+            class="popup__close-btn"
+            type="button"
+          ></button>
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <form id="edit-form" class="form" name="form" autocomplete="off">
+            <fieldset class="form__fieldset">
+              <input
+                id="name-input"
+                type="text"
+                class="input"
+                name="name-content"
+              />
+              <input
+                id="text-input"
+                type="text"
+                class="input"
+                name="text-content"
+              />
+            </fieldset>
+            <button class="form__button" type="submit">Сохранить</button>
+          </form>
         </div>
-        <button class="profile__add-button" type="button"></button>
-      </section>
-      <section class="elements">
-        <article class="element">
-          <img class="element__img" src="./images/dombay.jpg" alt="Домбай">
-          <h2 class="element__title">Домбай</h2>
-          <button class="element__button" type="button"></button>
-        </article>
-        <article class="element">
-          <img class="element__img" src="./images/kamchatka.jpg" alt="Камчатка">
-          <h2 class="element__title">Камчатка</h2>
-          <button class="element__button" type="button"></button>
-        </article>
-        <article class="element">
-          <img class="element__img" src="./images/komi.jpg" alt="Коми">
-          <h2 class="element__title">Коми</h2>
-          <button class="element__button" type="button"></button>
-        </article>
-        <article class="element">
-          <img class="element__img" src="./images/karachay-cherkessia.jpg" alt="Карачаево-Черкесия">
-          <h2 class="element__title">Карачаево-Черкесия</h2>
-          <button class="element__button" type="button"></button>
-        </article>
-        <article class="element"> 
-          <img class="element__img" src="./images/baikal.jpg" alt="Байкал">
-          <h2 class="element__title">Байкал</h2>
-          <button class="element__button" type="button"></button> 
-        </article>
-        <article class="element">
-          <img class="element__img" src="./images/mount_elbrus.jpg" alt="Гора Эльбрус">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button class="element__button" type="button"></button>
-        </article>
-      </section>
-    </main>
-    <footer class="footer">
-      <p class="footer__title">&copy; 2020. Денис Растрепин</p>
-    </footer>
-    <div id="edit-popup" class="popup">
-      <div class="popup__container">
-        <button id="close-popup-btn" class="popup__close-btn" type="button"></button>
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <form id="edit-form" class="form" name="form">
-          <fieldset class="form__fieldset">
-            <input id="name-input" type="text" class="input" name="name-content"/>
-            <input id="text-input" type="text" class="input" name="text-content"/>
-          </fieldset>
-          <button class="form__button" type="submit">Сохранить</button>
-        </form>
+      </div>
+
+      <div id="item-popup" class="popup">
+        <div class="popup__container">
+          <button
+            id="close-itemPopup-btn"
+            class="popup__close-btn"
+            type="button"
+          ></button>
+          <h3 class="popup__title">Новое место</h3>
+          <form id="item-form" class="form" name="form" autocomplete="off">
+            <fieldset class="form__fieldset">
+              <input
+                id="name-item-input"
+                type="text"
+                class="input"
+                name="name-content"
+                placeholder="Название"
+              />
+              <input
+                id="text-item-input"
+                type="text"
+                class="input"
+                name="link-content"
+                placeholder="Ссылка на картинку"
+              />
+            </fieldset>
+            <button class="form__button" type="submit">Сохранить</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="figure-popup" class="popup popup__figure">
+        <div class="popup__container-figure">
+          <button
+            id="popup-close-btn-figure"
+            class="popup__close-btn"
+            type="button"
+          ></button>
+          <figure class="figure">
+            <img class="figure__img" src="#" alt="картинка" />
+            <figcaption class="figure__img-name"></figcaption>
+          </figure>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

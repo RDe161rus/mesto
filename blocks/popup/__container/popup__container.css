@@ -4,9 +4,7 @@
   position: relative;
   max-width: 430px;
   background-color: #fff;
-  left: 50%;
-  top: 195px;
-  transform: translateX(-50%);
+  top: -17px;
   border-radius: 10px;
 }
 

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./pages/index.css" />
     <title>Места России</title>
     <script src="./scripts/constants.js" defer></script>
+    <script src="./scripts/validate.js" defer></script>
     <script src="./scripts/script.js" defer></script>
   </head>
   <body class="root">
@@ -56,6 +57,8 @@
       <footer class="footer">
         <p class="footer__title">&copy; 2020. Денис Растрепин</p>
       </footer>
+
+
       <div id="edit-popup" class="popup">
         <div class="popup__container">
           <button
@@ -64,20 +67,28 @@
             type="button"
           ></button>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <form id="edit-form" class="form" name="form" autocomplete="off">
+          <form id="edit-form" class="form" name="form" autocomplete="off" novalidate>
             <fieldset class="form__fieldset">
               <input
                 id="name-input"
                 type="text"
                 class="input"
                 name="name-content"
+                minlength="2"
+                maxlength="40"
+                required
               />
+             <span class="form__input-error name-input-error"></span>
               <input
                 id="text-input"
                 type="text"
                 class="input"
                 name="text-content"
+                minlength="2"
+                maxlength="200"
+                required
               />
+              <span class="form__input-error text-input-error"></span>
             </fieldset>
             <button class="form__button" type="submit">Сохранить</button>
           </form>
@@ -92,7 +103,7 @@
             type="button"
           ></button>
           <h3 class="popup__title">Новое место</h3>
-          <form id="item-form" class="form" name="form" autocomplete="off">
+          <form id="item-form" class="form" name="form" autocomplete="off" novalidate>
             <fieldset class="form__fieldset">
               <input
                 id="name-item-input"
@@ -100,16 +111,22 @@
                 class="input"
                 name="name-content"
                 placeholder="Название"
+                minlength="2"
+                maxlength="30"
+                required
               />
+             <span class="form__input-error name-item-input-error"></span>
               <input
                 id="text-item-input"
-                type="text"
+                type="url"
                 class="input"
                 name="link-content"
                 placeholder="Ссылка на картинку"
+                required
               />
+             <span class="form__input-error text-item-input-error"></span>
             </fieldset>
-            <button class="form__button" type="submit">Сохранить</button>
+            <button class="form__button" type="submit">Создать</button>
           </form>
         </div>
       </div>

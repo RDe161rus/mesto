@@ -2,7 +2,6 @@ const classSelectorObj = {
   formSelector: ".form",
   inputSelector: ".input",
   submitButtonSelector: ".form__button",
-  inactiveButtonClass: 'form__button_disabled',
   inputErrorClass: "input_type-error",
   errorClass: "form__input-error_active",
 };
@@ -37,10 +36,8 @@ const hasInvalidInput = (inputList) => {
 // ВКЛЮЧЕИНЕ ИЛИ ОТКЛЮЧЕНИЕ КНОПКИ
 const toggleButtonState = (inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
-/*     buttonElement.classList.add(classSelectorObj.inactiveButtonClass); */
     buttonElement.setAttribute("disabled", true);
   } else {
-/*     buttonElement.classList.remove(classSelectorObj.inactiveButtonClass); */
     buttonElement.removeAttribute("disabled");
   }
 };

@@ -14,6 +14,7 @@ const closeItemPopupBtn = document.querySelector("#close-itemPopup-btn");
 const formAddCard = document.querySelector("#item-form");
 const nameItemInput = formAddCard.querySelector("#name-item-input");
 const textItemInput = formAddCard.querySelector("#text-item-input");
+const buttonToCreate = document.querySelector('#button-to-create');
 //ОБРАЩЕНИЕ К ЗАГОЛОВКУ
 const profileTitle = document.querySelector(".profile__title");
 //ОБРАЩЕНИЕ К ПАРАГРОФУ
@@ -30,7 +31,6 @@ const figurePopup = document.querySelector("#figure-popup");
 const figureClose = figurePopup.querySelector("#popup-close-btn-figure");
 const figureImg = figurePopup.querySelector(".figure__img");
 const figureName = figurePopup.querySelector(".figure__img-name");
-const formButton = document.querySelector('.form__button');
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ profile__edit-button
 popupProfileOpenButton.addEventListener("click", () => {
   nameInput.value = profileTitle.textContent;
@@ -62,18 +62,17 @@ function closePopup(popup) {
 }
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ profile__add-button
 openedAddButton.addEventListener("click", () => {
-/*   formAddCard.reset();
-  formButton.classList.add('form__button_disabled'); */
+  buttonToCreate.setAttribute('disabled', true);
   openPopup(popupAddCard)
 });
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ close-itemPopup-btn
 closeItemPopupBtn.addEventListener("click", () => {
-/*   formButton.classList.remove('form__button_disabled');
-  formAddCard.reset(); */
   closePopup(popupAddCard)
 });
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ
-figureClose.addEventListener("click", () => closePopup(figurePopup));
+figureClose.addEventListener("click", () => {
+  closePopup(figurePopup)
+});
 
 //закрытие по ESC
 const closePopupEsc = (evt) => {
@@ -89,7 +88,6 @@ const closePopupOver = (evt) => {
     closePopup(openedPopup);
   }
 };
-
 
 initialCards.forEach((item) => {
   const сard = createCard(item);
@@ -134,6 +132,6 @@ formAddCard.addEventListener("submit", (evt) => {
     link: textItemInput.value,
   });
   
+  formAddCard.reset();
   elements.prepend(newCards);
-  evt.target.reset();
 });

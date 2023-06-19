@@ -5,15 +5,16 @@ const textInput = document.querySelector("#text-input");
 const formEditProfile = document.querySelector("#edit-form");
 //ОБРАЩЕНИЕ К КНОПКИ POPUP-ПРОФИЛЯ
 const popupProfileOpenButton = document.querySelector("#opened-popup-btn");
-const closePopupBtn = document.querySelector("#close-popup-btn");
+const popupProfileCloseButton = document.querySelector("#close-popup-btn");
 //ОБРАЩЕНИЕ К POPUP-ITEM
+
 const popupAddCard = document.querySelector("#item-popup");
 //ОБРАЩЕНИЕ К КНОПКИ ПРОФИЛЯ-ITEM
-const openedAddButton = document.querySelector("#opened-add-button");
-const closeItemPopupBtn = document.querySelector("#close-itemPopup-btn");
-const formAddCard = document.querySelector("#item-form");
-const nameItemInput = formAddCard.querySelector("#name-item-input");
-const textItemInput = formAddCard.querySelector("#text-item-input");
+const profileAddButton = document.querySelector("#opened-add-button");
+const buttonClosePopup = document.querySelector("#close-itemPopup-btn");
+const formAddCards = document.querySelector("#item-form");
+const nameItemInput = formAddCards.querySelector("#name-item-input");
+const textItemInput = formAddCards.querySelector("#text-item-input");
 const buttonToCreate = document.querySelector('#button-to-create');
 //ОБРАЩЕНИЕ К ЗАГОЛОВКУ
 const profileTitle = document.querySelector(".profile__title");
@@ -39,7 +40,7 @@ popupProfileOpenButton.addEventListener("click", () => {
 });
 
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ close-popup-btn
-closePopupBtn.addEventListener("click", () => closePopup(popupEditProfile));
+popupProfileCloseButton.addEventListener("click", () => closePopup(popupEditProfile));
 
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ Сохранить
 formEditProfile.addEventListener("submit", (evt) => {
@@ -61,12 +62,12 @@ function closePopup(popup) {
   popup.removeEventListener("mousedown", closePopupOver);
 }
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ profile__add-button
-openedAddButton.addEventListener("click", () => {
+profileAddButton.addEventListener("click", () => {
   buttonToCreate.setAttribute('disabled', true);
   openPopup(popupAddCard)
 });
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ close-itemPopup-btn
-closeItemPopupBtn.addEventListener("click", () => {
+buttonClosePopup.addEventListener("click", () => {
   closePopup(popupAddCard)
 });
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ
@@ -107,7 +108,6 @@ function createCard(item) {
   const buttonLike = card.querySelector(".element__button");
   buttonLike.addEventListener("click", () => {
     buttonLike.classList.toggle("element__button_active");
-    buttonLike.remove();
   });
 
   const buttonDel = card.querySelector(".element__button-del");
@@ -123,7 +123,7 @@ function createCard(item) {
   return card;
 }
 
-formAddCard.addEventListener("submit", (evt) => {
+formAddCards.addEventListener("submit", (evt) => {
   evt.preventDefault();
   closePopup(popupAddCard);
   
@@ -132,6 +132,6 @@ formAddCard.addEventListener("submit", (evt) => {
     link: textItemInput.value,
   });
   
-  formAddCard.reset();
+  formAddCards.reset();
   elements.prepend(newCards);
 });

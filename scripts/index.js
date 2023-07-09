@@ -29,7 +29,6 @@ const buttonLike = document.querySelector(".element__button");
 //ОБРАЩЕНИЕ К template-element
 const templateElements = document.querySelector("#template-element");
 const templateContent = templateElements.content;
-const elementItem = templateContent.querySelector(".element");
 const elements = document.querySelector(".elements");
 //ОБРАЩЕНИЕ К POPUP FIGURE
 const figurePopup = document.querySelector("#figure-popup");
@@ -42,6 +41,8 @@ const formAddCardsValidator = new FormValidator(classSelectorObj, formAddCards);
 popupProfileOpenButton.addEventListener("click", () => {
   nameInput.value = profileTitle.textContent;
   textInput.value = profileText.textContent;
+  formEditProfileValidator.enableValidation();
+  formEditProfileValidator.resetValidation();
   openPopup(popupEditProfile);
 });
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ close-popup-btn
@@ -58,8 +59,7 @@ function openPopup(popup) {
   popup.classList.add("popup_is-opened");
   document.addEventListener("keydown", closePopupEsc);
   popup.addEventListener("mousedown", closePopupOver);
-  formEditProfileValidator.enableValidation();
-  formAddCardsValidator.enableValidation();
+
 }
 //ФУНКЧИЯ ЗАКРЫТИЯ POPUP
 function closePopup(popup) {
@@ -69,7 +69,9 @@ function closePopup(popup) {
 }
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ profile__add-button
 profileAddButton.addEventListener("click", () => {
-  buttonToCreate.setAttribute('disabled', true);
+  formAddCardsValidator.enableValidation();
+  formAddCardsValidator.resetValidation();
+  formAddCards.reset();
   openPopup(popupAddCard)
 });
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ close-itemPopup-btn

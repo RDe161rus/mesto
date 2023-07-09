@@ -1,11 +1,14 @@
 export class FormValidator {
   constructor(classSelectorObj, formElement) {
+    this._classSelectorObj = classSelectorObj;
     this._formElement = formElement;
     this._formSelector = classSelectorObj.formSelector;
     this._inputSelector = classSelectorObj.inputSelector;
     this._submitButtonSelector = classSelectorObj.submitButtonSelector;
     this._inputErrorClass = classSelectorObj.inputErrorClass;
     this._errorClass = classSelectorObj.errorClass;
+    this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
+    this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
   };
   // добавляем классы с ошибками
   _showInputError = (formInput, errorMessage) => {
@@ -33,33 +36,36 @@ export class FormValidator {
   };
 
   //пронеряем все input на валидность
-  _hasInvalidInput = (inputList) => {
-    return inputList.some((inputElement) => {
+  _hasInvalidInput = () => {
+    return this._inputList.some((inputElement) => {
       return !inputElement.validity.valid;
     });
   };
   // ВКЛЮЧЕИНЕ ИЛИ ОТКЛЮЧЕНИЕ КНОПКИ
-  _toggleButtonState = (inputList, buttonElement) => {
-    if (this._hasInvalidInput(inputList)) {
-      buttonElement.setAttribute("disabled", true);
+  _toggleButtonState = () => {
+    if (this._hasInvalidInput(this._inputList)) {
+      this._buttonElement.setAttribute("disabled", true);
     } else {
-      buttonElement.removeAttribute("disabled");
+      this._buttonElement.removeAttribute("disabled");
     }
   };
 
   //ОБРАБОТЧИК ДЛЯ ВСЕХ
   _setEventListeners = () => {
-    const inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
-    const buttonElement = this._formElement.querySelector(this._submitButtonSelector);
-    this._toggleButtonState(inputList, buttonElement);
-    inputList.forEach((inputElement) => {
+    this._toggleButtonState();
+    this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
         this._handlerInputValidity(inputElement)
-        this._toggleButtonState(inputList, buttonElement);
+        this._toggleButtonState();
       })
     })
   };
-
+  resetValidation = () => {
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement)
+    })
+    this._toggleButtonState();
+  };
   //ВОЛИДАЦИЯ ВСЕХ ФОРМ
   enableValidation = () => {
     this._setEventListeners();

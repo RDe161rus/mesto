@@ -35,13 +35,15 @@ const figurePopup = document.querySelector("#figure-popup");
 const figureClose = figurePopup.querySelector("#popup-close-btn-figure");
 
 const formEditProfileValidator = new FormValidator(classSelectorObj, formEditProfile);
+formEditProfileValidator.enableValidation();
 const formAddCardsValidator = new FormValidator(classSelectorObj, formAddCards);
+formAddCardsValidator.enableValidation();
 
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ profile__edit-button
 popupProfileOpenButton.addEventListener("click", () => {
   nameInput.value = profileTitle.textContent;
   textInput.value = profileText.textContent;
-  formEditProfileValidator.enableValidation();
+  
   formEditProfileValidator.resetValidation();
   openPopup(popupEditProfile);
 });
@@ -69,7 +71,6 @@ function closePopup(popup) {
 }
 //ОБРАЩЕНИЕ ПО НАЖАТИЮ НА КНОПКУ profile__add-button
 profileAddButton.addEventListener("click", () => {
-  formAddCardsValidator.enableValidation();
   formAddCardsValidator.resetValidation();
   formAddCards.reset();
   openPopup(popupAddCard)

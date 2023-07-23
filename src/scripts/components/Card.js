@@ -1,4 +1,4 @@
-import { clickPopupImg } from "./index.js";
+/* import { clickPopupImg } from "../../pages/index.js"; */
 export class Card {
   constructor(date, selector){
     this._title = date.name;
@@ -49,6 +49,6 @@ export class Card {
       this._figureImg.src = this._image;
       this._figureImg.alt = this._title;
       this._figureTitle.textContent = this._title;
-      clickPopupImg();
+      /* clickPopupImg(); */
   };
 }

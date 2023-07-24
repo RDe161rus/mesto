@@ -12,18 +12,6 @@ import {
   nameInput,
   textInput,
   profileAddButton,
-
-
-  
-  buttonToCreate,
-  profileTitle,
-  profileText,
-  templateElements,
-  templateContent,
-  elements,
-  figureClose,
-  buttonClosePopup,
-  popupProfileCloseButton,
 } from "../scripts/utils/constants.js";
 
 import { Card } from "../scripts/components/Card.js";
@@ -81,10 +69,11 @@ const popupWithForm = new PopupWithForm(popupEditProfile, handleProfileSubmitFor
 popupWithForm.setEventListeners();
 
 popupProfileOpenButton.addEventListener("click", () => {
-  popupWithForm.open();
+  
   const userDate = userInfo.getUserInfo();
   nameInput.value = userDate.name;
-  textInput.value = userDate.info;
+  textInput.value = userDate.about;
+  popupWithForm.open();
   formEditProfileValidator.resetValidation();
 });
 

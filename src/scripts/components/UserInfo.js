@@ -7,7 +7,7 @@ export default class UserInfo {
     return { name: this._name.textContent, info: this._info.textContent };
   }
   setUserInfo(date) {
-    this._name.textContent = date.name;
-    this._info.textContent = date.infoProfession;
+    this._name.textContent = date.nameProf;
+    this._info.textContent = date.infoProf;
   }
 }

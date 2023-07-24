@@ -1,8 +1,6 @@
 import {
   initialCards,
   classSelectorObj,
-
-
   popupEditProfile,
   formEditProfile,
   popupProfileOpenButton,
@@ -13,6 +11,10 @@ import {
   figurePopup,
   nameInput,
   textInput,
+  profileAddButton,
+
+
+  
   buttonToCreate,
   profileTitle,
   profileText,
@@ -20,17 +22,16 @@ import {
   templateContent,
   elements,
   figureClose,
-  profileAddButton,
   buttonClosePopup,
   popupProfileCloseButton,
 } from "../scripts/utils/constants.js";
 
 import { Card } from "../scripts/components/Card.js";
 import { FormValidator } from "../scripts/components/FormValidator.js";
-import  PopupWithImage  from "../scripts/components/PopupWithImage.js";
-import  PopupWithForm  from "../scripts/components/PopupWithForm.js";
-import  Section  from "../scripts/components/Section.js";
-import  UserInfo  from "../scripts/components/UserInfo.js";
+import PopupWithImage from "../scripts/components/PopupWithImage.js";
+import PopupWithForm from "../scripts/components/PopupWithForm.js";
+import Section from "../scripts/components/Section.js";
+import UserInfo from "../scripts/components/UserInfo.js";
 
 //ДОБАВЛЕНИЕ СТАНДАРТ.КАРТ
 function createCards(item) {
@@ -46,7 +47,7 @@ const cards = new Section(
       cards.addItem(cardElement);
     },
   },
-  ".template-element"
+  ".elements"
 );
 cards.renderItems();
 //ДОБАВЛЕНИЕ НОВЫх КАРТ
@@ -67,8 +68,8 @@ function clickCard(name, link) {
 }
 
 const userInfo = new UserInfo({
-  selectorName: ".figure__img",
-  selectorInfo: ".figure__img-name",
+  selectorName: ".profile__title",
+  selectorInfo: ".profile__text",
 });
 
 function handleProfileSubmitForm(date) {
@@ -78,6 +79,7 @@ function handleProfileSubmitForm(date) {
 
 const popupWithForm = new PopupWithForm(popupEditProfile, handleProfileSubmitForm);
 popupWithForm.setEventListeners();
+
 popupProfileOpenButton.addEventListener("click", () => {
   popupWithForm.open();
   const userDate = userInfo.getUserInfo();
@@ -88,8 +90,7 @@ popupProfileOpenButton.addEventListener("click", () => {
 
 const popupCard = new PopupWithForm(popupAddCard, createNewCard);
 popupCard.setEventListeners();
-
-popupProfileOpenButton.addEventListener("click", () => {
+profileAddButton.addEventListener("click", () => {
   popupCard.open();
   formAddCardsValidator.resetValidation();
 });
@@ -97,5 +98,6 @@ popupProfileOpenButton.addEventListener("click", () => {
 //ВАЛИДАЦИЯ
 const formEditProfileValidator = new FormValidator(classSelectorObj, formEditProfile);
 formEditProfileValidator.enableValidation();
+
 const formAddCardsValidator = new FormValidator(classSelectorObj, formAddCards);
 formAddCardsValidator.enableValidation();

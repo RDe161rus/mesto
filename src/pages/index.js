@@ -13,26 +13,14 @@ import {
   nameInput,
   textInput,
   profileAddButton,
-
-
-  
-  buttonToCreate,
-  profileTitle,
-  profileText,
-  templateElements,
-  templateContent,
-  elements,
-  figureClose,
-  buttonClosePopup,
-  popupProfileCloseButton,
 } from "../scripts/utils/constants.js";
 
-import { Card } from "../scripts/components/Card.js";
-import { FormValidator } from "../scripts/components/FormValidator.js";
-import PopupWithImage from "../scripts/components/PopupWithImage.js";
-import PopupWithForm from "../scripts/components/PopupWithForm.js";
-import Section from "../scripts/components/Section.js";
-import UserInfo from "../scripts/components/UserInfo.js";
+import { Card } from "../components/Card.js";
+import { FormValidator } from "../components/FormValidator.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import Section from "../components/Section.js";
+import UserInfo from "../components/UserInfo.js";
 
 //ДОБАВЛЕНИЕ СТАНДАРТ.КАРТ
 function createCards(item) {
@@ -85,7 +73,7 @@ popupProfileOpenButton.addEventListener("click", () => {
   popupWithForm.open();
   const userDate = userInfo.getUserInfo();
   nameInput.value = userDate.name;
-  textInput.value = userDate.info;
+  textInput.value = userDate.about;
   formEditProfileValidator.resetValidation();
 });
 

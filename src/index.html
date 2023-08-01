@@ -9,7 +9,7 @@
   <body class="root">
     <div class="page">
       <header class="header">
-        <img class="header__logo" alt="Логотип" src="<%=require('./images/logo-header.svg')%>">
+        <img class="header__logo" alt="Логотип" src="<%=require('./images/logo-header.svg')%>" />
       </header>
       <main class="main">
         <section class="profile">
@@ -21,19 +21,11 @@
             />
             <div class="profile__profile-info">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button
-                id="opened-popup-btn"
-                class="profile__edit-button"
-                type="button"
-              ></button>
+              <button id="opened-popup-btn" class="profile__edit-button" type="button"></button>
               <p class="profile__text">Исследователь океана</p>
             </div>
           </div>
-          <button
-            id="opened-add-button"
-            class="profile__add-button"
-            type="button"
-          ></button>
+          <button id="opened-add-button" class="profile__add-button" type="button"></button>
         </section>
         <section class="elements">
           <template id="template-element" class="template-element">
@@ -51,19 +43,9 @@
       </footer>
       <div id="edit-popup" class="popup">
         <div class="popup__container">
-          <button
-            id="close-popup-btn"
-            class="popup__close-btn"
-            type="button"
-          ></button>
+          <button id="close-popup-btn" class="popup__close-btn" type="button"></button>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <form
-            id="edit-form"
-            class="form"
-            name="editProfile"
-            autocomplete="off"
-            novalidate
-          >
+          <form id="edit-form" class="form" name="editProfile" autocomplete="off" novalidate>
             <fieldset class="form__fieldset">
               <input
                 id="name-input"
@@ -95,19 +77,9 @@
 
       <div id="item-popup" class="popup">
         <div class="popup__container">
-          <button
-            id="close-itemPopup-btn"
-            class="popup__close-btn"
-            type="button"
-          ></button>
+          <button id="close-itemPopup-btn" class="popup__close-btn" type="button"></button>
           <h3 class="popup__title">Новое место</h3>
-          <form
-            id="item-form"
-            class="form"
-            name="addCards"
-            autocomplete="off"
-            novalidate
-          >
+          <form id="item-form" class="form" name="addCards" autocomplete="off" novalidate>
             <fieldset class="form__fieldset">
               <input
                 id="name-item-input"
@@ -130,20 +102,14 @@
               />
               <span class="form__input-error text-item-input-error"></span>
             </fieldset>
-            <button id="button-to-create" class="form__button" type="submit">
-              Создать
-            </button>
+            <button id="button-to-create" class="form__button" type="submit">Создать</button>
           </form>
         </div>
       </div>
 
       <div id="figure-popup" class="popup popup_bg">
         <div class="popup__container-figure">
-          <button
-            id="popup-close-btn-figure"
-            class="popup__close-btn"
-            type="button"
-          ></button>
+          <button id="popup-close-btn-figure" class="popup__close-btn" type="button"></button>
           <figure class="figure">
             <img class="figure__img" src="#" alt="картинка" />
             <figcaption class="figure__img-name"></figcaption>

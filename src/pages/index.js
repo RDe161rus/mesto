@@ -7,8 +7,6 @@ import {
   popupProfileOpenButton,
   popupAddCard,
   formAddCards,
-  nameItemInput,
-  textItemInput,
   figurePopup,
   nameInput,
   textInput,
@@ -40,10 +38,10 @@ const cards = new Section(
 );
 cards.renderItems();
 //ДОБАВЛЕНИЕ НОВЫх КАРТ
-function createNewCard() {
+function createNewCard(date) {
   const newCards = {
-    name: nameItemInput.value,
-    link: textItemInput.value,
+    name: date.nameContent,
+    link: date.linkContent,
   };
   const newCard = createCards(newCards);
   cards.addItem(newCard);

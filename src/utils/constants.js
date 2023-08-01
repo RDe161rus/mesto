@@ -41,6 +41,4 @@ export const popupProfileOpenButton = document.querySelector("#opened-popup-btn"
 export const popupAddCard = document.querySelector("#item-popup");
 export const profileAddButton = document.querySelector("#opened-add-button");
 export const formAddCards = document.querySelector("#item-form");
-export const nameItemInput = formAddCards.querySelector("#name-item-input");
-export const textItemInput = formAddCards.querySelector("#text-item-input");
 export const figurePopup = document.querySelector("#figure-popup");

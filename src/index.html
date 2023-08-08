@@ -16,8 +16,8 @@
           <div class="profile__profile-group">
             <img
               class="profile__avatar"
-              src="<%=require('./images/Jacques-Yves_Cousteau.jpg')%>"
-              alt="Жак-Ив Кусто"
+              src="#"
+              alt="аватар"
             />
             <div class="profile__profile-info">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -27,12 +27,16 @@
           </div>
           <button id="opened-add-button" class="profile__add-button" type="button"></button>
         </section>
+
         <section class="elements">
           <template id="template-element" class="template-element">
             <article class="element">
               <img class="element__img" src="#" alt="картинка" />
               <h2 class="element__title"></h2>
-              <button class="element__button" type="button"></button>
+              <div class="like-counter">
+                <button class="element__button" type="button"></button>
+                <p class="like-counter__card">0</p>
+              </div>
               <button class="element__button-del" type="button"></button>
             </article>
           </template>
@@ -75,7 +79,7 @@
         </div>
       </div>
 
-      <div id="item-popup" class="popup">
+      <div id="item-popup" class="popup popup__item">
         <div class="popup__container">
           <button id="close-itemPopup-btn" class="popup__close-btn" type="button"></button>
           <h3 class="popup__title">Новое место</h3>
@@ -85,7 +89,7 @@
                 id="name-item-input"
                 type="text"
                 class="input"
-                name="nameContent"
+                name="name"
                 placeholder="Название"
                 minlength="2"
                 maxlength="30"
@@ -96,7 +100,7 @@
                 id="text-item-input"
                 type="url"
                 class="input"
-                name="linkContent"
+                name="link"
                 placeholder="Ссылка на картинку"
                 required
               />
@@ -106,7 +110,37 @@
           </form>
         </div>
       </div>
-
+      <div id="avatar-popup" class="popup popup__avatar">
+        <div class="popup__container">
+          <button id="close-avatarPopup-btn" class="popup__close-btn" type="button"></button>
+          <h3 class="popup__title">Обновить аватар</h3>
+          <form id="avatar-form" class="form" name="avatar" autocomplete="off" novalidate>
+            <fieldset class="form__fieldset">
+              <input
+                id="avatar-input"
+                type="url"
+                class="input"
+                name="avatar"
+                placeholder="Ссылка на аватар"
+                required
+              />
+              <span class="form__input-error avatar-input-error"></span>
+            </fieldset>
+            <button id="button-to-create" class="form__button form__button-save" type="submit">
+              Сохранить
+            </button>
+          </form>
+        </div>
+      </div>
+      <div id="confirm-popup" class="popup popup__confirm">
+        <div class="popup__container popup__container_confirm">
+          <button id="close-itemPopup-btn" class="popup__close-btn" type="button"></button>
+          <h3 class="popup__title popup__title_confirm">Вы уверены?</h3>
+          <form id="avatar-form" class="form" name="avatar" autocomplete="off" novalidate>
+            <button id="button-to-create" class="form__button" type="submit">Да</button>
+          </form>
+        </div>
+      </div>
       <div id="figure-popup" class="popup popup_bg">
         <div class="popup__container-figure">
           <button id="popup-close-btn-figure" class="popup__close-btn" type="button"></button>

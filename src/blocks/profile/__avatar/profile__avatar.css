@@ -3,3 +3,8 @@
   object-fit: contain;
   border-radius: 50%;
 }
+
+.profile__avatar:hover {
+  opacity: .2;
+  cursor: pointer;
+}

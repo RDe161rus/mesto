@@ -152,7 +152,6 @@ const avatarPopup = new PopupWithForm(popupAvatar, handleAvatarFormSubmit);
 avatarPopup.setEventListeners();
 async function handleAvatarFormSubmit(data) {
   avatarPopup.renderLoading(true, 'Сохранение...');
-  console.log(data);
   try {
     const res = await api.editAvatar(data);
     userInfo.setAvatar(res);
@@ -171,7 +170,6 @@ profileAvatar.addEventListener('click', () => {
 
 const popupWithImage = new PopupWithImage(figurePopup);
 popupWithImage.setEventListeners();
-console.log(popupWithImage);
 
 const formEditProfileValidator = new FormValidator(classSelectorObj, formEditProfile);
 formEditProfileValidator.enableValidation();
